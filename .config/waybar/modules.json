@@ -1,0 +1,31 @@
+{
+  // Workspaces
+  "hyprland/workspaces" : {
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+    "sort-by-number": true,
+  },
+
+  // Language
+  "hyprland/language": {
+    "format": "{}",
+    "min-length": 5,
+    "tooltip": false,
+  },
+
+  // Keyboard
+  "keyboard-state": {
+    "capslock": true,
+    "format": "{name} {icon} ",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    },
+  }
+}
