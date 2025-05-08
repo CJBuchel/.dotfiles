@@ -1,5 +1,4 @@
 {
-  // Workspaces
   "hyprland/workspaces" : {
     "format": "{icon}",
     "on-click": "activate",
@@ -12,14 +11,12 @@
     "sort-by-number": true,
   },
 
-  // Language
   "hyprland/language": {
     "format": "{}",
     "min-length": 5,
     "tooltip": false,
   },
 
-  // Keyboard
   "keyboard-state": {
     "capslock": true,
     "format": "{name} {icon} ",
@@ -29,7 +26,11 @@
     },
   },
 
-  // Audio Sink
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a, %d %b, %I:%M %p}",
+  },
+
   "pulseaudio#sink": {
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
@@ -45,11 +46,51 @@
     "on-click": "pavucontrol"
   },
 
-  // Audio Source
   "pulseaudio#source": {
     "format": "{format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "󰍭",
     "on-click": "pavucontrol"
   },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+
+  "temperature": {
+    "critical-threshold": 70,
+    "format": "{temperatureC}°C",
+  },
+
+  "memory": {
+    "format": "{used}GiB",
+  },
+
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) 󰖩",
+    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) 󱚼",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 10,
+    },
+    "interval": 10,
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰚥",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  }
 }

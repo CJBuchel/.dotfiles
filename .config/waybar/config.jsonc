@@ -3,8 +3,8 @@
 
   // Position TOP
   "layer": "top",
-  "margin-top": 14,
-  "margin-bottom": 0,
+  "margin-top": 6,
+  "margin-bottom": 6,
   "margin-right": 14,
   "margin-left": 14,
 
@@ -16,20 +16,18 @@
     "hyprland/workspaces",
     "hyprland/language",
     "keyboard-state",
+    "clock",
   ],
 
-  // Modules Center
-  "modules-center": [
-  ],
 
   "modules-right": [
     "pulseaudio#sink", 
     "pulseaudio#source",
-    "network", 
-    "cpu", 
-    "memory", 
     "backlight", 
+    "cpu",
+    "temperature",
+    "memory",
+    "network",
     "battery",
-    "tray"
   ],
 }
