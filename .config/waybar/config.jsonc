@@ -22,34 +22,14 @@
   "modules-center": [
   ],
 
-    // Modules Right    
-    // "modules-right": [
-    //     "custom/updates",
-    //     "pulseaudio",
-    //     "bluetooth",
-    //     "battery", 
-    //     "group/hardware",
-    //     "custom/exit",
-    //     "network",
-    //     "clock"
-    // ],
-
-    // Group Quicklinks
-    // "group/quicklinks": {
-    //     "orientation": "horizontal",
-    //     "modules": [
-    //         "custom/filemanager",
-    //         "custom/brave",
-    //      ]
-    // },
-
-    // Group Hardware
-    // "group/hardware": {
-    //     "orientation": "horizontal",
-    //     "modules": [
-    //         "disk",
-    //         "cpu",
-    //         "memory"
-    //     ]
-    // }
+  "modules-right": [
+    "pulseaudio#sink", 
+    "pulseaudio#source",
+    "network", 
+    "cpu", 
+    "memory", 
+    "backlight", 
+    "battery",
+    "tray"
+  ],
 }

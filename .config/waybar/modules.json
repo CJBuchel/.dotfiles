@@ -25,7 +25,31 @@
     "format": "{name} {icon} ",
     "format-icons": {
       "locked": "",
-      "unlocked": ""
+      "unlocked": ""
     },
-  }
+  },
+
+  // Audio Sink
+  "pulseaudio#sink": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": "{format-muted}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", " ", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  // Audio Source
+  "pulseaudio#source": {
+    "format": "{format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "󰍭",
+    "on-click": "pavucontrol"
+  },
 }
