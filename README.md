@@ -2,3 +2,8 @@
 
 ## Setup a new machine
 - `git clone --separate-git-dir=$HOME/.dotfiles https://github.com/CJBuchel/.dotfiles.git ~`
+
+## Alternatively Using the manual method (and copy manually)
+```
+git clone --separate-git-dir=$HOME/.dotfiles https://github.com/CJBuchel/.dotfiles.git tmpdotfiles
+```
