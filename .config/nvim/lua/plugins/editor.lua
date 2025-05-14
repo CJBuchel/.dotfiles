@@ -1,45 +1,47 @@
 return {
   {
-    "hrsh7th/cmp-cmdline",
-    event = "InsertEnter",
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     config = function()
-      local cmp = require("cmp")
-      local config = cmp.get_config()
-      table.insert(config.sources, {
-        name = "path",
-      })
-      table.insert(config.sources, {
-        name = "cmdline",
-        option = {
-          ignore_cmds = { "Man", "!" },
-        },
-      })
-      config.mapping = cmp.mapping.preset.cmdline()
-      -- `:` cmdline setup.
-      cmp.setup.cmdline(":", config)
-      -- `/` cmdline setup.
-      cmp.setup.cmdline("/", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
-      })
-      cmp.setup(config)
+      require("dapui").setup()
     end,
   },
 
   {
-    "dmitmel/cmp-cmdline-history",
-    event = "InsertEnter",
-    config = function()
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
       local cmp = require("cmp")
-      local config = cmp.get_config()
-      table.insert(config.sources, {
-        name = "cmdline_history",
+      opts.completion = {
+        autocomplete = false,
+      }
+
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        -- Manually trigger completion menu
+        ["<C-Space>"] = cmp.mapping.complete(),
+
+        -- Accept completion with Tab
+        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+
+        -- Make Enter insert a newline instead of accepting
+        ["<CR>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.close()
+            fallback()
+          else
+            fallback()
+          end
+        end),
+
+        -- Dismiss completion menu
+        ["<C-e>"] = cmp.mapping.abort(),
       })
-      config.mapping = cmp.mapping.preset.cmdline()
-      cmp.setup.cmdline(":", config)
-      cmp.setup(config)
+      return opts
     end,
+
+    -- Test
   },
 }
