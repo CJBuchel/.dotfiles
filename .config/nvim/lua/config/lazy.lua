@@ -13,7 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
--- vim.opt.clipboard = "unnamedplus"
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -51,3 +51,7 @@ require("lazy").setup({
     },
   },
 })
+
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "cyan" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "orange" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "red" })
